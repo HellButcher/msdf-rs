@@ -59,8 +59,14 @@ where
         }
     }
 
-    pub fn rasterize_sdf<F>(&self, shape: &Shape<S>, width: usize, height: usize, offset: u8, mut draw_pixel: F)
-    where
+    pub fn rasterize_sdf<F>(
+        &self,
+        shape: &Shape<S>,
+        width: usize,
+        height: usize,
+        offset: u8,
+        mut draw_pixel: F,
+    ) where
         F: FnMut(usize, usize, u8),
     {
         let half = S::one() / (S::one() + S::one());
@@ -78,7 +84,9 @@ where
                 let value = if let Some((distance, _)) =
                     shape.closest_point(Point2::new(p_x, p_y), scaled_offset, epsilon)
                 {
-                    let distance = (distance * From::from(128) / scaled_offset).to_u8().unwrap();
+                    let distance = (distance * From::from(128) / scaled_offset)
+                        .to_u8()
+                        .unwrap();
                     if filled {
                         128 + distance
                     } else {

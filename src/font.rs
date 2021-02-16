@@ -36,7 +36,9 @@ impl ttf_parser::OutlineBuilder for ShapeBuilder<f64> {
     }
 
     fn curve_to(&mut self, x1: f32, y1: f32, x2: f32, y2: f32, x: f32, y: f32) {
-        self.cubic_to(x1 as f64, y1 as f64, x2 as f64, y2 as f64, x as f64, y as f64);
+        self.cubic_to(
+            x1 as f64, y1 as f64, x2 as f64, y2 as f64, x as f64, y as f64,
+        );
     }
 
     fn close(&mut self) {

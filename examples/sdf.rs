@@ -67,11 +67,23 @@ fn main() {
     std::fs::create_dir_all(examples_dest).unwrap();
     println!("Writing example outputs to {}", examples_dest.display());
 
-    raster_bitmap(&face, '#').save(examples_dest.join("bitmap_a.png")).unwrap();
-    raster_bitmap(&face, '@').save(examples_dest.join("bitmap_b.png")).unwrap();
-    raster_bitmap(&face, 'R').save(examples_dest.join("bitmap_c.png")).unwrap();
+    raster_bitmap(&face, '#')
+        .save(examples_dest.join("bitmap_a.png"))
+        .unwrap();
+    raster_bitmap(&face, '@')
+        .save(examples_dest.join("bitmap_b.png"))
+        .unwrap();
+    raster_bitmap(&face, 'R')
+        .save(examples_dest.join("bitmap_c.png"))
+        .unwrap();
 
-    raster_sdf(&face, '#').save(examples_dest.join("sdf_a.png")).unwrap();
-    raster_sdf(&face, '@').save(examples_dest.join("sdf_b.png")).unwrap();
-    raster_sdf(&face, 'R').save(examples_dest.join("sdf_c.png")).unwrap();
+    raster_sdf(&face, '#')
+        .save(examples_dest.join("sdf_a.png"))
+        .unwrap();
+    raster_sdf(&face, '@')
+        .save(examples_dest.join("sdf_b.png"))
+        .unwrap();
+    raster_sdf(&face, 'R')
+        .save(examples_dest.join("sdf_c.png"))
+        .unwrap();
 }
