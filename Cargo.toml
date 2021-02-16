@@ -1,0 +1,27 @@
+[package]
+name = "msdf"
+version = "0.1.0"
+authors = ["Christoph Hommelsheim <hellbutcher@gmx.de>"]
+description = "a *Multi-channel signed distance field generator* for fonts"
+license = "MIT"
+keywords = ["sdf", "msdf", "distance-field", "font", "text", "truetype", "opentype", "ttf"]
+categories = ["no-std", "gui", "game-development", "graphics", "rendering"]
+edition = "2018"
+readme = "README.md"
+
+[badges]
+maintenance = { status = "experimental" }
+
+[features]
+default = ["ttf-parser"]
+std = ["num-traits/std"]
+
+[dependencies]
+ttf-parser = { version = "0.11.0", default-features = false, optional = true }
+smallvec = "1.6.1"
+vek = "0.14.0"
+num-traits = { version = "0.2.14", default-features = false }
+approx = { version = "0.4.0", default-features = false }
+
+[dev-dependencies]
+image = { version = "0.23", default-features = false, features = ["png"] }
